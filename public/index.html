@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="openCard.css" />
+    <link rel="stylesheet" href="index.css" />
     <title>Wedding Invitation</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -12,67 +12,78 @@
     <script src="https://cdn.jsdelivr.net/gh/timoschaefer/jQuery-Sakura/jquery-sakura.min.js"></script>
   </head>
   <body onload="countdown()">
-    <div class="sakura-falling"></div>
-    <div class="animated-bg-1" id="animated-bg"></div>
+    <div id="scroll-animate">
+      <div id="scroll-animate-main">
+        <div class="wrapper-parallax">
+          <div class="animated-bg-1" id="animated-bg" style="z-index: 1"></div>
+          <header>
+            <div class="sakura-falling"></div>
+            <img src="https://i.imgur.com/dGOOfnA.png" alt="image-top-right" class="top-right-decoration" />
+            <img src="https://i.imgur.com/t6ffnbn.png" alt="image-top-left" class="top-left-decoration" />
+            <div class="wrap">
+              <div class="title">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <h1>KAMG MYUNG JU</h1>
+                <h2>Son of KANG PAN SEOK and KIM YONG MI2</h2>
+                <br /><br />
+                <h2>&</h2>
+                <h1>ICHIJO MAYU</h1>
+                <h2>Daughter of ICHIJO YASUKO</h2>
+                <br />
+                <br />
+                <h3>Are getting married</h3>
+                <p><span class="place">"어반브룩"</span></p>
+                <p>광주광역시 남구 임암길 181</p>
+                <p>2024 / 10 / 5</p>
+                <p>17:00 PM</p>
+              </div>
+            </div>
+            <div id="countdown-timer">
+              <div class="countdown-item">
+                <span>Day</span>
+                <div id="days" class="time"></div>
+              </div>
+              <div class="countdown-item">
+                <span>Hrs</span>
+                <div id="hours" class="time"></div>
+              </div>
+              <div class="countdown-item">
+                <span>Min</span>
+                <div id="mins" class="time"></div>
+              </div>
+              <div class="countdown-item">
+                <span>Sec</span>
+                <div id="secs" class="time"></div>
+              </div>
+            </div>
+          </header>
 
-    <img src="https://i.imgur.com/dGOOfnA.png" alt="image-top-right" class="top-right-decoration" />
-    <img src="https://i.imgur.com/t6ffnbn.png" alt="image-top-left" class="top-left-decoration" />
-    <div class="wrap">
-      <div class="title">
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <h1>KAMG MYUNG JU</h1>
-        <h2>Son of KANG PAN SEOK and KIM YONG MI</h2>
-        <br /><br />
-        <h2>&</h2>
-        <h1>ICHIJO MAYU</h1>
-        <h2>Daughter of ICHIJO YASUKO</h2>
-        <br />
-        <br />
-        <h3>Are getting married</h3>
-        <p><span class="place">"어반브룩"</span></p>
-        <p>광주광역시 남구 임암길 181</p>
-        <p>2024 / 10 / 5</p>
-        <p>17:00 PM</p>
+          <section class="contentPage">
+            <p class="dance-med">Way to Come</p>
+            <div style="display: flex; flex-direction: row; justify-content: center; align-items: center">
+              <a href="https://map.naver.com/p/search/%EC%96%B4%EB%B0%98%EB%B8%8C%EB%A3%A9/place/1284603728?c=15.00,0,0,0,dh&isCorrectAnswer=true" target="_blank">
+                <div class="naver locationBtn">Naver</div> </a
+              ><br />
+              <a href="https://m.map.kakao.com/actions/detailMapView?id=1473366312&refService=place" target="_blank"> <div class="kakao locationBtn">Kakao</div> </a><br />
+              <a
+                href="https://www.google.com/maps/dir//%EA%B4%91%EC%A3%BC%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%82%A8%EA%B5%AC+%EC%9E%84%EC%95%94%EB%8F%99+565-1/data=!4m8!4m7!1m0!1m5!1m1!1s0x3571899f7ed5d02f:0x67b16c0e638ecae3!2m2!1d126.8666791!2d35.1018123?entry=ttu"
+                target="_blank"
+              >
+                <div class="google locationBtn">Google</div>
+              </a>
+            </div>
+            <div id="imgCard-container"></div>
+          </section>
+          <footer>
+            <p class="happiness">Join us in our happiness!<br /></p>
+          </footer>
+        </div>
       </div>
     </div>
-    <div id="countdown-timer">
-      <div class="countdown-item">
-        <span>Day</span>
-        <div id="days" class="time"></div>
-      </div>
-      <div class="countdown-item">
-        <span>Hrs</span>
-        <div id="hours" class="time"></div>
-      </div>
-      <div class="countdown-item">
-        <span>Min</span>
-        <div id="mins" class="time"></div>
-      </div>
-      <div class="countdown-item">
-        <span>Sec</span>
-        <div id="secs" class="time"></div>
-      </div>
-    </div>
-
-    <p class="dance-med">Way to Come</p>
-    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center">
-      <a href="https://map.naver.com/p/search/%EC%96%B4%EB%B0%98%EB%B8%8C%EB%A3%A9/place/1284603728?c=15.00,0,0,0,dh&isCorrectAnswer=true" target="_blank">
-        <div class="naver locationBtn">Naver</div> </a
-      ><br />
-      <a href="https://m.map.kakao.com/actions/detailMapView?id=1473366312&refService=place" target="_blank"> <div class="kakao locationBtn">Kakao</div> </a><br />
-      <a
-        href="https://www.google.com/maps/dir//%EA%B4%91%EC%A3%BC%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%82%A8%EA%B5%AC+%EC%9E%84%EC%95%94%EB%8F%99+565-1/data=!4m8!4m7!1m0!1m5!1m1!1s0x3571899f7ed5d02f:0x67b16c0e638ecae3!2m2!1d126.8666791!2d35.1018123?entry=ttu"
-        target="_blank"
-      >
-        <div class="google locationBtn">Google</div>
-      </a>
-    </div>
-    <div id="imgCard-container"></div>
-    <p class="happiness">Join us in our happiness!<br /></p>
 
     <script type="text/javascript">
       function countdown() {
@@ -99,13 +110,7 @@
         }
       }
     </script>
-    <script>
-      fetch('imgCard.html')
-        .then((response) => response.text())
-        .then((html) => {
-          document.getElementById('imgCard-container').innerHTML = html;
-        });
-    </script>
+
     <script>
       function getRandomEmoji(emojis) {
         return emojis[Math.floor(Math.random() * emojis.length)];
@@ -161,7 +166,6 @@
         createEmojiAnimation(emojiList, numberOfEmojis);
       });
     </script>
-    <script src="openCard.js"></script>
     <script>
       function scrollFooter(scrollY, heightFooter) {
         console.log(scrollY);
@@ -182,39 +186,37 @@
         var windowHeight = $(window).height(),
           footerHeight = $('footer').height(),
           heightDocument = windowHeight + $('.contentPage').height() + $('footer').height() - 20;
-
-        // Definindo o tamanho do elemento pra animar
         $('#scroll-animate, #scroll-animate-main').css({
           height: heightDocument + 'px',
         });
-
-        // Definindo o tamanho dos elementos header e conteúdo
         $('header').css({
           height: windowHeight + 'px',
-          'line-height': windowHeight + 'px',
         });
-
         $('.wrapper-parallax').css({
           'margin-top': windowHeight + 'px',
         });
-
         scrollFooter(window.scrollY, footerHeight);
-
-        // ao dar rolagem
         window.onscroll = function () {
           var scroll = window.scrollY;
-
           $('#scroll-animate-main').css({
             top: '-' + scroll + 'px',
           });
-
           $('header').css({
             'background-position-y': 50 - (scroll * 100) / heightDocument + '%',
           });
-
           scrollFooter(scroll, footerHeight);
         };
       });
+    </script>
+    <script>
+      fetch('imgCard.html')
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById('imgCard-container').innerHTML = html;
+        })
+        .catch((error) => {
+          console.error('Error loading imgCard.html:', error);
+        });
     </script>
     <script>
       (function ($) {

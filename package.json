@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "express": "^4.19.2",
+    "mime": "^4.0.3"
+  },
+  "name": "weddingcardorgame",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --watch server.js --watch public"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
