@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>HTML Game</title>
+    <meta charset="UTF-8" />
+    <style>
+      html,
+      body {
+        height: 100%;
+
+        margin: 0;
+      }
+
+      body {
+        background: #0c0c0c;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <canvas width="800" height="550" id="game"></canvas>
+    <script>
+      const canvas = document.getElementById('game');
+      const context = canvas.getContext('2d');
+      const minTunnelWidth = 400;
+      const maxTunnelWidth = canvas.width;
+      const minHeight = 10;
+      const maxHeight = 100;
+      const obstacleWidth = 65;
+      const obstacleHeight = 135;
+      const moveSpeed = 3; // 움직임속도
+      const gravity = 0.01; // 중력
+      let spacePressed = false; //스페이스추적
+      // 최소값과 최대값 사이의 숫자 고정
+      function clamp(num, min, max) {
+        return Math.min(Math.max(min, num), max);
+      }
+      // min(포함)과 max(포함) 사이의 임의의 정수를 반환합니다.
+      function randInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      const helicopter = {
+        x: 200,
+        y: 100,
+        width: 100,
+        height: 60,
+        dy: 0, // velocity
+        ddy: 0, // acceleration
+      };
+
+      //터널 벽의 현재 x 위치, 너비, 시작 및 끝 높이를 추적합니다. 상단과 하단 벽은 미러링되어 있으므로  그 중 하나만 추적하면 됩니다.
+      let tunnels = [
+        {
+          x: 0,
+          width: canvas.width,
+          start: 50,
+          end: 50,
+        },
+        {
+          x: canvas.width,
+          width: randInt(minTunnelWidth, maxTunnelWidth),
+          start: 50,
+          end: randInt(minHeight, maxHeight),
+        },
+      ];
+
+      // 경로에 있는 장애물의 경우 크기가 항상 동일하므로 위치를 추적하면 됩니다.
+      let obstacles = [
+        {
+          x: canvas.width,
+          y: canvas.height / 2,
+        },
+        {
+          x: canvas.width * 2,
+          y: canvas.height / 2,
+        },
+      ];
+
+      const wallColor = 'green'; // 터널 벽 색상 및 RGB 값
+      context.fillStyle = wallColor;
+      context.fillRect(0, 0, 1, 1);
+
+      // getImageData는 지정된 사각형(x, y, 너비, 높이)에 있는 캔버스의 모든 픽셀의
+      // 평면 배열인 데이터 객체를 반환합니다.
+      // 배열의 모든 4개 인덱스는 단일 픽셀의 r,g,b,a 값입니다.
+      const wallData = context.getImageData(0, 0, 1, 1);
+
+      // 벽의 RGB 값을 얻기 위해 이미지 데이터 배열을 분해합니다.
+      // @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+      const [wallRed, wallGreen, wallBlue] = wallData.data;
+
+      // game loop
+      let rAF;
+
+      function loop() {
+        rAF = requestAnimationFrame(loop);
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        if (spacePressed) {
+          helicopter.ddy = -0.7;
+        } else {
+          helicopter.ddy = 0;
+        }
+
+        helicopter.dy += helicopter.ddy + gravity; //가속도와 속도를 기반으로 위치 업데이트
+        helicopter.dy = clamp(helicopter.dy, -8, 8); //클램프 속도
+        helicopter.y += helicopter.dy;
+
+        context.fillStyle = 'white'; // draw helicopter
+        context.fillRect(helicopter.x, helicopter.y, helicopter.width, helicopter.height);
+
+        context.fillStyle = 'green'; // 헬리콥터 위에 터널 벽을 그립니다.
+
+        tunnels.forEach((tunnel, index) => {
+          tunnel.x -= moveSpeed;
+
+          //마지막 터널이 화면에 완전히 표시되면
+          // 화면 밖에 새로운 터널 세그먼트를 생성해야 합니다.
+          if (index === tunnels.length - 1 && tunnel.x + tunnel.width <= canvas.width) {
+            tunnels.push({
+              x: tunnel.x + tunnel.width,
+              width: randInt(minTunnelWidth, maxTunnelWidth),
+              start: tunnel.end,
+              end: randInt(minHeight, maxHeight),
+            });
+          }
+
+          // 상단 터널 벽
+          context.beginPath();
+          context.moveTo(tunnel.x, 0);
+          context.lineTo(tunnel.x, tunnel.start);
+          context.lineTo(tunnel.x + tunnel.width, tunnel.end);
+          context.lineTo(tunnel.x + tunnel.width, 0);
+          context.closePath();
+          context.fill();
+
+          // 하단 터널 벽
+          context.beginPath();
+          context.moveTo(tunnel.x, canvas.height);
+          context.lineTo(tunnel.x, tunnel.start + 450);
+          context.lineTo(tunnel.x + tunnel.width, tunnel.end + 450);
+          context.lineTo(tunnel.x + tunnel.width, canvas.height);
+          context.closePath();
+          context.fill();
+        });
+
+        // 장애물
+        obstacles.forEach((obstacle, index) => {
+          obstacle.x -= moveSpeed;
+          context.fillRect(obstacle.x, obstacle.y, obstacleWidth, obstacleHeight);
+          // 마지막 장애물이 화면에 완전히 표시되면 새로운
+          // 일회성 화면을 생성해야 합니다
+          if (index === obstacles.length - 1 && obstacle.x + obstacleWidth <= canvas.width) {
+            obstacles.push({
+              x: canvas.width * 2,
+              y: randInt(maxHeight + 50, canvas.height - obstacleHeight - maxHeight - 50),
+            });
+          }
+        });
+
+        // 화면 밖에 있는 터널 구간이나 장애물을 제거.
+        tunnels = tunnels.filter((tunnel) => tunnel.x + tunnel.width > 0);
+        obstacles = obstacles.filter((obstacle) => obstacle.x + obstacleWidth > 0);
+
+        // 픽셀 완벽한 충돌 감지
+        // 헬리콥터 직사각형에서 캔버스의 픽셀을 가져오고 벽 색상과 일치하는 픽셀을 찾습니다.
+        // 이것이 작동하려면 헬리콥터 위에 벽은 그려져야 함
+        const { data } = context.getImageData(helicopter.x, helicopter.y, helicopter.width, helicopter.height);
+        for (let i = 0; i < data.length; i += 4) {
+          const r = data[i];
+          const g = data[i + 1];
+          const b = data[i + 2];
+          // 터널 벽 색상과 일치하면 충돌이 발생합니다.
+          if (r === wallRed && g === wallGreen && b === wallBlue) {
+            // 헬리콥터가 충돌하면 헬리콥터 주위에 빨간색 점선 원표시.
+            context.strokeStyle = 'red';
+            context.setLineDash([5, 15]);
+            context.lineWidth = 4;
+            context.beginPath();
+            context.arc(helicopter.x + helicopter.width / 2, helicopter.y + helicopter.height / 2, helicopter.width, 0, 2 * Math.PI);
+            context.stroke();
+            cancelAnimationFrame(rAF);
+          }
+        }
+      }
+
+      // 키보드로 헬리콥터를 움직입니다.
+      document.addEventListener('keydown', function (e) {
+        if (e.code === 'Space') spacePressed = true;
+      });
+      document.addEventListener('keyup', function (e) {
+        if (e.code === 'Space') spacePressed = false;
+      });
+
+      // 게임시작
+      rAF = requestAnimationFrame(loop);
+    </script>
+  </body>
+</html>

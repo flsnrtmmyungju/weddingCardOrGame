@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" >
+   <head>	
+    <link rel="stylesheet" href="openCard.css" />
+    <title>Wedding Invitation</title>
+    <link rel="icon" type="image/x-icon" href="https://images.pexels.com/photos/36753/flower-purple-lical-blosso.jpg?cs=srgb&dl=pexels-pixabay-36753.jpg&fm=jpg">
+      <link rel="stylesheet" href="wedding.css">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dancing+Script&amp;display=swap'>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body>
+    <script src="openCard.js">
+    </script>    
+      <div class="sakura-falling"></div>
+      <img src="https://i.imgur.com/dGOOfnA.png" alt="image-top-right" class="top-right-decoration">
+      <img src="https://i.imgur.com/t6ffnbn.png" alt="image-top-left" class="top-left-decoration"> 
+      <section id="media"></section>
+      <div class="wrap">
+         <div class="title">
+			 <br> <br> <br> <br> <br>
+			<h1>KAMG MYUNG JU</h1>    
+            <h2>Son of KANG PAN SEOK and KIM YONG MI</h2>           
+            <br><br>
+            <h2>&</h2>
+			
+            <h1>ICHIJO MAYU</h1>
+            <h2>Daughter of ICHIJO YASUKO</h2>
+            <br>
+            <br>
+            <h3>Are getting married</h3>
+            <p> <span class="place">"어반브룩"</span></p>
+			<p> 광주광역시 남구 임암길 181</p>
+			<p> 2024 / 10 / 5 </p>
+			<p>17:00 PM</p>                 
+            </p>
+         </div>				 
+      </div>
+	   <body onload="countdown()">
+		<div id="countdown-timer">
+			<div class="countdown-item">
+				<span>DAY</span>
+			<div id="days"></div>
+			</div>
+			<div class="countdown-item">
+				<span>HR</span>
+			<div id="hours"></div>
+			</div>
+			<div class="countdown-item">
+				<span>MIN</span>
+			<div id="mins"></div>
+			</div>
+			<div class="countdown-item">
+				<span>SEC</span>
+			<div id="secs"></div>
+			</div>
+		</div>
+		</body>
+      <p class="dance-med">
+         Followed by 
+      </p>
+		<a href="https://map.naver.com/p/search/%EC%96%B4%EB%B0%98%EB%B8%8C%EB%A3%A9/place/1284603728?c=15.00,0,0,0,dh&isCorrectAnswer=true" target="_blank">
+          <div class="venue">Naver Map</div>
+        </a>      
+		 <br>
+		 <a href="https://m.map.kakao.com/actions/detailMapView?id=1473366312&refService=place" target="_blank">
+          <div class="venue">Kakao Map</div>
+        </a>      
+		 <br>
+        <a href="https://www.google.com/maps/dir//%EA%B4%91%EC%A3%BC%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%82%A8%EA%B5%AC+%EC%9E%84%EC%95%94%EB%8F%99+565-1/data=!4m8!4m7!1m0!1m5!1m1!1s0x3571899f7ed5d02f:0x67b16c0e638ecae3!2m2!1d126.8666791!2d35.1018123?entry=ttu" target="_blank">
+          <div class="venue">Google Map</div>
+        </a>
+    
+		<div id="imgCard-container"></div>
+    	  <p class="happiness">Join us in our happiness!<br></p>
+</head>
+</html>
+	<script type="text/javascript">
+		function countdown() {
+		var now = new Date();
+		var eventDate = new Date("October 5, 2024 17:00:00");
+		var currentTime = now.getTime();
+		var eventTime = eventDate.getTime();
+		var remTime = eventTime - currentTime;
+		var seconds = Math.floor(remTime / 1000);
+		var minutes = Math.floor(seconds / 60);
+		var hours = Math.floor(minutes / 60);
+		var days = Math.floor(hours / 24);
+		hours %= 24;
+		minutes %= 60;
+		seconds %= 60;
+		if (remTime < 0) {
+			document.getElementById("countdown-timer").innerHTML = "<h2>날짜가 지났어요!!</h2>";
+		} else {
+			document.getElementById("days").innerHTML = days;
+			document.getElementById("hours").innerHTML = hours;
+			document.getElementById("mins").innerHTML = minutes;
+			document.getElementById("secs").innerHTML = seconds;
+			setTimeout(countdown, 1000);
+		}
+		}
+	</script>
+	<script>
+		fetch('imgCard.html')
+			.then(response => response.text())
+			.then(html => {
+			document.getElementById('imgCard-container').innerHTML = html;
+			});
+	</script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+	<script src='https://cdn.jsdelivr.net/gh/timoschaefer/jQuery-Sakura/jquery-sakura.min.js'></script>
+	<script >
+	(function ($) {
+	'use strict';
+	$('.sakura-falling').sakura();
+	})(jQuery);		
+	</script>
+   </body>
+</html>
+  
+  
