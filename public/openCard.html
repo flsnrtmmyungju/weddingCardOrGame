@@ -1,123 +1,226 @@
 <!DOCTYPE html>
-<html lang="en" >
-   <head>	
+<html lang="en">
+  <head>
     <link rel="stylesheet" href="openCard.css" />
     <title>Wedding Invitation</title>
-    <link rel="icon" type="image/x-icon" href="https://images.pexels.com/photos/36753/flower-purple-lical-blosso.jpg?cs=srgb&dl=pexels-pixabay-36753.jpg&fm=jpg">
-      <link rel="stylesheet" href="wedding.css">
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
-      <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Dancing+Script&amp;display=swap'>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   </head>
-   <body>
-    <script src="openCard.js">
-    </script>    
-      <div class="sakura-falling"></div>
-      <img src="https://i.imgur.com/dGOOfnA.png" alt="image-top-right" class="top-right-decoration">
-      <img src="https://i.imgur.com/t6ffnbn.png" alt="image-top-left" class="top-left-decoration"> 
-      <section id="media"></section>
-      <div class="wrap">
-         <div class="title">
-			 <br> <br> <br> <br> <br>
-			<h1>KAMG MYUNG JU</h1>    
-            <h2>Son of KANG PAN SEOK and KIM YONG MI</h2>           
-            <br><br>
-            <h2>&</h2>
-			
-            <h1>ICHIJO MAYU</h1>
-            <h2>Daughter of ICHIJO YASUKO</h2>
-            <br>
-            <br>
-            <h3>Are getting married</h3>
-            <p> <span class="place">"어반브룩"</span></p>
-			<p> 광주광역시 남구 임암길 181</p>
-			<p> 2024 / 10 / 5 </p>
-			<p>17:00 PM</p>                 
-            </p>
-         </div>				 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script&amp;display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/timoschaefer/jQuery-Sakura/jquery-sakura.min.js"></script>
+  </head>
+  <body onload="countdown()">
+    <div class="sakura-falling"></div>
+    <div class="animated-bg-1" id="animated-bg"></div>
+
+    <img src="https://i.imgur.com/dGOOfnA.png" alt="image-top-right" class="top-right-decoration" />
+    <img src="https://i.imgur.com/t6ffnbn.png" alt="image-top-left" class="top-left-decoration" />
+    <div class="wrap">
+      <div class="title">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1>KAMG MYUNG JU</h1>
+        <h2>Son of KANG PAN SEOK and KIM YONG MI</h2>
+        <br /><br />
+        <h2>&</h2>
+        <h1>ICHIJO MAYU</h1>
+        <h2>Daughter of ICHIJO YASUKO</h2>
+        <br />
+        <br />
+        <h3>Are getting married</h3>
+        <p><span class="place">"어반브룩"</span></p>
+        <p>광주광역시 남구 임암길 181</p>
+        <p>2024 / 10 / 5</p>
+        <p>17:00 PM</p>
       </div>
-	   <body onload="countdown()">
-		<div id="countdown-timer">
-			<div class="countdown-item">
-				<span>DAY</span>
-			<div id="days"></div>
-			</div>
-			<div class="countdown-item">
-				<span>HR</span>
-			<div id="hours"></div>
-			</div>
-			<div class="countdown-item">
-				<span>MIN</span>
-			<div id="mins"></div>
-			</div>
-			<div class="countdown-item">
-				<span>SEC</span>
-			<div id="secs"></div>
-			</div>
-		</div>
-		</body>
-      <p class="dance-med">
-         Followed by 
-      </p>
-		<a href="https://map.naver.com/p/search/%EC%96%B4%EB%B0%98%EB%B8%8C%EB%A3%A9/place/1284603728?c=15.00,0,0,0,dh&isCorrectAnswer=true" target="_blank">
-          <div class="venue">Naver Map</div>
-        </a>      
-		 <br>
-		 <a href="https://m.map.kakao.com/actions/detailMapView?id=1473366312&refService=place" target="_blank">
-          <div class="venue">Kakao Map</div>
-        </a>      
-		 <br>
-        <a href="https://www.google.com/maps/dir//%EA%B4%91%EC%A3%BC%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%82%A8%EA%B5%AC+%EC%9E%84%EC%95%94%EB%8F%99+565-1/data=!4m8!4m7!1m0!1m5!1m1!1s0x3571899f7ed5d02f:0x67b16c0e638ecae3!2m2!1d126.8666791!2d35.1018123?entry=ttu" target="_blank">
-          <div class="venue">Google Map</div>
-        </a>
-    
-		<div id="imgCard-container"></div>
-    	  <p class="happiness">Join us in our happiness!<br></p>
-</head>
+    </div>
+    <div id="countdown-timer">
+      <div class="countdown-item">
+        <span>Day</span>
+        <div id="days" class="time"></div>
+      </div>
+      <div class="countdown-item">
+        <span>Hrs</span>
+        <div id="hours" class="time"></div>
+      </div>
+      <div class="countdown-item">
+        <span>Min</span>
+        <div id="mins" class="time"></div>
+      </div>
+      <div class="countdown-item">
+        <span>Sec</span>
+        <div id="secs" class="time"></div>
+      </div>
+    </div>
+
+    <p class="dance-med">Way to Come</p>
+    <div style="display: flex; flex-direction: row; justify-content: center; align-items: center">
+      <a href="https://map.naver.com/p/search/%EC%96%B4%EB%B0%98%EB%B8%8C%EB%A3%A9/place/1284603728?c=15.00,0,0,0,dh&isCorrectAnswer=true" target="_blank">
+        <div class="naver locationBtn">Naver</div> </a
+      ><br />
+      <a href="https://m.map.kakao.com/actions/detailMapView?id=1473366312&refService=place" target="_blank"> <div class="kakao locationBtn">Kakao</div> </a><br />
+      <a
+        href="https://www.google.com/maps/dir//%EA%B4%91%EC%A3%BC%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%82%A8%EA%B5%AC+%EC%9E%84%EC%95%94%EB%8F%99+565-1/data=!4m8!4m7!1m0!1m5!1m1!1s0x3571899f7ed5d02f:0x67b16c0e638ecae3!2m2!1d126.8666791!2d35.1018123?entry=ttu"
+        target="_blank"
+      >
+        <div class="google locationBtn">Google</div>
+      </a>
+    </div>
+    <div id="imgCard-container"></div>
+    <p class="happiness">Join us in our happiness!<br /></p>
+
+    <script type="text/javascript">
+      function countdown() {
+        var now = new Date();
+        var eventDate = new Date('October 5, 2024 17:00:00');
+        var currentTime = now.getTime();
+        var eventTime = eventDate.getTime();
+        var remTime = eventTime - currentTime;
+        var seconds = Math.floor(remTime / 1000);
+        var minutes = Math.floor(seconds / 60);
+        var hours = Math.floor(minutes / 60);
+        var days = Math.floor(hours / 24);
+        hours %= 24;
+        minutes %= 60;
+        seconds %= 60;
+        if (remTime < 0) {
+          document.getElementById('countdown-timer').innerHTML = '<h2>날짜가 지났어요!!</h2>';
+        } else {
+          document.getElementById('days').innerHTML = days;
+          document.getElementById('hours').innerHTML = hours;
+          document.getElementById('mins').innerHTML = minutes;
+          document.getElementById('secs').innerHTML = seconds;
+          setTimeout(countdown, 1000);
+        }
+      }
+    </script>
+    <script>
+      fetch('imgCard.html')
+        .then((response) => response.text())
+        .then((html) => {
+          document.getElementById('imgCard-container').innerHTML = html;
+        });
+    </script>
+    <script>
+      function getRandomEmoji(emojis) {
+        return emojis[Math.floor(Math.random() * emojis.length)];
+      }
+
+      function createEmojiAnimation(emojis, count) {
+        const container = document.getElementById('animated-bg');
+        for (let i = 0; i < count; i++) {
+          const emoji = document.createElement('div');
+          emoji.classList.add('emoji');
+          emoji.textContent = getRandomEmoji(emojis);
+          const isLeftSide = Math.random() < 0.5;
+          const initialX = isLeftSide ? 0 : window.innerWidth;
+          const initialY = window.innerHeight;
+          const speed = Math.random() * 2 + 10;
+          let angle;
+          if (isLeftSide) {
+            angle = Math.random() * 40 + 45; // 45~85도
+          } else {
+            angle = Math.random() * 40 + 275; // 275~355도
+          }
+          const deltaX = Math.cos(angle) * speed;
+          const deltaY = Math.sin(angle) * speed;
+          emoji.style.left = initialX + 'px';
+          emoji.style.top = initialY + 'px';
+          emoji.style.animationDuration = Math.random() * 5 + 2 + 's';
+
+          animateEmoji(emoji, deltaX, deltaY);
+          container.appendChild(emoji);
+        }
+      }
+      function animateEmoji(emoji, deltaX, deltaY) {
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        let intervalId = setInterval(moveEmoji, 30);
+        function moveEmoji() {
+          let posX = parseFloat(emoji.style.left);
+          let posY = parseFloat(emoji.style.top);
+          if (posX < -50 || posX > screenWidth || posY < -50 || posY > screenHeight) {
+            clearInterval(intervalId);
+            emoji.remove();
+          } else {
+            emoji.style.left = posX + deltaX + 'px';
+            emoji.style.top = posY + deltaY + 'px';
+          }
+        }
+      }
+      document.addEventListener('click', () => {
+        isAnimating = true;
+        const emojis = '🎈🎆🎇🧨✨🎉🎊🎀🎁😊😂🤣😍💕😘👍🙌🥰🤩😚🤡❤️🩷🧡💛💚🤍❤️‍🔥❣️💕💞💓💗💖💘💝💌💟😎';
+        const emojiList = Array.from(emojis).map((emoji, index) => `${emoji}`);
+        const numberOfEmojis = 100;
+        createEmojiAnimation(emojiList, numberOfEmojis);
+      });
+    </script>
+    <script src="openCard.js"></script>
+    <script>
+      function scrollFooter(scrollY, heightFooter) {
+        console.log(scrollY);
+        console.log(heightFooter);
+
+        if (scrollY >= heightFooter) {
+          $('footer').css({
+            bottom: '0px',
+          });
+        } else {
+          $('footer').css({
+            bottom: '-' + heightFooter + 'px',
+          });
+        }
+      }
+
+      $(window).load(function () {
+        var windowHeight = $(window).height(),
+          footerHeight = $('footer').height(),
+          heightDocument = windowHeight + $('.contentPage').height() + $('footer').height() - 20;
+
+        // Definindo o tamanho do elemento pra animar
+        $('#scroll-animate, #scroll-animate-main').css({
+          height: heightDocument + 'px',
+        });
+
+        // Definindo o tamanho dos elementos header e conteúdo
+        $('header').css({
+          height: windowHeight + 'px',
+          'line-height': windowHeight + 'px',
+        });
+
+        $('.wrapper-parallax').css({
+          'margin-top': windowHeight + 'px',
+        });
+
+        scrollFooter(window.scrollY, footerHeight);
+
+        // ao dar rolagem
+        window.onscroll = function () {
+          var scroll = window.scrollY;
+
+          $('#scroll-animate-main').css({
+            top: '-' + scroll + 'px',
+          });
+
+          $('header').css({
+            'background-position-y': 50 - (scroll * 100) / heightDocument + '%',
+          });
+
+          scrollFooter(scroll, footerHeight);
+        };
+      });
+    </script>
+    <script>
+      (function ($) {
+        'use strict';
+        $('.sakura-falling').sakura();
+      })(jQuery);
+    </script>
+  </body>
 </html>
-	<script type="text/javascript">
-		function countdown() {
-		var now = new Date();
-		var eventDate = new Date("October 5, 2024 17:00:00");
-		var currentTime = now.getTime();
-		var eventTime = eventDate.getTime();
-		var remTime = eventTime - currentTime;
-		var seconds = Math.floor(remTime / 1000);
-		var minutes = Math.floor(seconds / 60);
-		var hours = Math.floor(minutes / 60);
-		var days = Math.floor(hours / 24);
-		hours %= 24;
-		minutes %= 60;
-		seconds %= 60;
-		if (remTime < 0) {
-			document.getElementById("countdown-timer").innerHTML = "<h2>날짜가 지났어요!!</h2>";
-		} else {
-			document.getElementById("days").innerHTML = days;
-			document.getElementById("hours").innerHTML = hours;
-			document.getElementById("mins").innerHTML = minutes;
-			document.getElementById("secs").innerHTML = seconds;
-			setTimeout(countdown, 1000);
-		}
-		}
-	</script>
-	<script>
-		fetch('imgCard.html')
-			.then(response => response.text())
-			.then(html => {
-			document.getElementById('imgCard-container').innerHTML = html;
-			});
-	</script>
-	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-	<script src='https://cdn.jsdelivr.net/gh/timoschaefer/jQuery-Sakura/jquery-sakura.min.js'></script>
-	<script >
-	(function ($) {
-	'use strict';
-	$('.sakura-falling').sakura();
-	})(jQuery);		
-	</script>
-   </body>
-</html>
-  
-  
