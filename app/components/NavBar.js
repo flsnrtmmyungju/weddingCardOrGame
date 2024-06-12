@@ -7,16 +7,16 @@ const Nav = styled.nav`
   justify-content: space-around;
   background-color: #333;
   padding: 1rem;
+  color: white;
+  text-decoration: none;
 `;
-
-const NavLink = styled.a`
+const NavLink = styled.span`
   color: white;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
   }
 `;
-
 export default function NavBar() {
   return (
     <Nav>
