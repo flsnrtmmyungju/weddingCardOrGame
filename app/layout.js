@@ -1,4 +1,5 @@
 import './globals.css';
+import NavBar from './components/NavBar';
 
 export const metadata = {
   title: '명주마유결혼해요!!',
@@ -8,7 +9,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body>
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }

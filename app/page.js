@@ -1,4 +1,4 @@
-import MainCard from './component/MainCard';
+import MainCard from './components/MainCard';
 
 export default function Home() {
   return (
