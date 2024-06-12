@@ -160,7 +160,7 @@
       }
       document.addEventListener('click', () => {
         isAnimating = true;
-        const emojis = '🎈🎆🎇🧨✨🎉🎊🎀🎁😊😂🤣😍💕😘👍🙌🥰🤩😚🤡❤️🩷🧡💛💚🤍❤️‍🔥❣️💕💞💓💗💖💘💝💌💟😎';
+        const emojis = '🎈🎆🎇🎉🎊🎀🎁😊😂🤣😍💕😘👍🙌🎈🎆🎇🎉🎊🎀🎁🥰🤩😚🤡❤️💛💚😎🎈🎆🎇🎉🎊🎀🎁';
         const emojiList = Array.from(emojis).map((emoji, index) => `${emoji}`);
         const numberOfEmojis = 100;
         createEmojiAnimation(emojiList, numberOfEmojis);
@@ -209,8 +209,13 @@
       });
     </script>
     <script>
-      fetch('imgCard.html')
-        .then((response) => response.text())
+      fetch('imgCard.html') 
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.text();
+        })
         .then((html) => {
           document.getElementById('imgCard-container').innerHTML = html;
         })
