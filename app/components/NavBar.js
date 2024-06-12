@@ -29,9 +29,6 @@ export default function NavBar() {
       <Link href='/templatePage/2' passHref>
         <NavLink>2</NavLink>
       </Link>
-      <Link href='/templatePage/3' passHref>
-        <NavLink>3</NavLink>
-      </Link>
       <Link href='/templatePage/4' passHref>
         <NavLink>4</NavLink>
       </Link>
