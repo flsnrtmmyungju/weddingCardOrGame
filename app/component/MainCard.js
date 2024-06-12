@@ -14,7 +14,7 @@ export default function MainCard() {
   //   }, []);
   return (
     <FlexDiv>
-      <div>main</div>
+      <div>누나바보</div>
     </FlexDiv>
   );
 }
