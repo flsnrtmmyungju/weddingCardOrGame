@@ -20,11 +20,11 @@ const NavLink = styled.span`
 export default function NavBar() {
   return (
     <Nav>
-      <Link href='/' passHref>
-        <NavLink>Home</NavLink>
-      </Link>
       <Link href='/templatePage/1' passHref>
         <NavLink>1</NavLink>
+      </Link>
+      <Link href='/' passHref>
+        <NavLink>Home</NavLink>
       </Link>
       <Link href='/templatePage/2' passHref>
         <NavLink>2</NavLink>
