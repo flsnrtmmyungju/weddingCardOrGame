@@ -309,7 +309,8 @@ figure {
 }
 
 .fh5co-cover {
-  height: 900px;
+  height: 700px;
+  margin-bottom: 50px;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -330,12 +331,12 @@ figure {
 }
 @media screen and (max-width: 768px) {
   .fh5co-cover {
-    height: 600px;
+    height: 450px;
   }
 }
 .fh5co-cover .display-t,
 .fh5co-cover .display-tc {
-  height: 900px;
+  height: 700px;
   display: table;
   width: 100%;
 }
@@ -1899,3 +1900,21 @@ form label {
 }
 
 /*# sourceMappingURL=style.css.map */
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #232629;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
