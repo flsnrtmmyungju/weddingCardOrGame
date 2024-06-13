@@ -64,7 +64,7 @@
                 <div id="home" class="display-tc animate-box" data-animate-effect="fadeIn">
                   <h1>Myung Ju &amp; Mayu</h1>
                   <h2>We Are Getting Married</h2>
-                  <div class="simply-countdown simply-countdown-one"></div>
+                  <div class="simply-countdown"></div>
                 </div>
               </div>
             </div>
@@ -348,22 +348,21 @@
     <script src="js/main.js"></script>
 
     <script>
-      var d = new Date(new Date().getTime() + 200 * 120 * 120 * 2000);
-
+      var d = new Date('October 5, 2024 17:00:00');
       // default example
-      simplyCountdown('.simply-countdown-one', {
+      simplyCountdown('.simply-countdown', {
         year: d.getFullYear(),
         month: d.getMonth() + 1,
         day: d.getDate(),
       });
 
       //jQuery example
-      $('#simply-countdown-losange').simplyCountdown({
-        year: d.getFullYear(),
-        month: d.getMonth() + 1,
-        day: d.getDate(),
-        enableUtc: false,
-      });
+      //   $('#simply-countdown-losange').simplyCountdown({
+      //     year: d.getFullYear(),
+      //     month: d.getMonth() + 1,
+      //     day: d.getDate(),
+      //     enableUtc: false,
+      //   });
     </script>
   </body>
 </html>

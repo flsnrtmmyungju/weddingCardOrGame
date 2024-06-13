@@ -950,15 +950,13 @@ form label {
 }
 
 .simply-countdown {
-  /* The countdown */
-  margin-bottom: 2em;
 }
 
 .simply-countdown > .simply-section {
   /* coutndown blocks */
   display: inline-block;
-  width: 100px;
-  height: 100px;
+  width: 12vw;
+  height: 12vw;
   background: rgba(241, 78, 149, 0.8);
   margin: 0 4px;
   -webkit-border-radius: 50%;
@@ -982,10 +980,12 @@ form label {
 }
 .simply-countdown > .simply-section > div {
   /* countdown block inner div */
-  display: table-cell;
-  vertical-align: middle;
-  height: 100px;
-  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 12vw;
+  height: 12vw;
 }
 
 .simply-countdown > .simply-section .simply-amount,
@@ -996,14 +996,15 @@ form label {
 }
 
 .simply-countdown > .simply-section .simply-amount {
-  font-size: 30px;
+  font-size: 5vw;
+  margin-bottom: -2.1vw;
   /* amounts */
 }
 
 .simply-countdown > .simply-section .simply-word {
   color: rgba(255, 255, 255, 0.7);
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 2vw;
   /* words */
 }
 
