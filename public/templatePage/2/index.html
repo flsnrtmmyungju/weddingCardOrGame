@@ -445,83 +445,54 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="title-box">
-						<h2>Contact wth us</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+						<h2>오시는길</h2>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-12 col-sm-12 col-xs-12">
 				  <div class="contact-block">
-					<form id="contactForm">
-					  <div class="row">
-						<div class="col-md-12">
-							<div class="form-group">
-								<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
-								<div class="help-block with-errors"></div>
-							</div>                                 
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
-								<div class="help-block with-errors"></div>
-							</div> 
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<select class="custom-select d-block form-control" id="guest" required data-error="Please select an item in the list.">
-								  <option disabled selected>Number Of Guest*</option>
-								  <option value="1">1</option>
-								  <option value="2">2</option>
-								  <option value="3">3</option>
-								  <option value="4">4</option>
-								  <option value="5">5</option>
-								</select>
-								<div class="help-block with-errors"></div>
-							</div> 
-						</div>
-						<div class="col-md-12">
-							<div class="form-group">
-								<select class="custom-select d-block form-control" id="event" required data-error="Please select an item in the list.">
-								  <option disabled selected>I Am Attending*</option>
-								  <option value="1">All events</option>
-								  <option value="2">Wedding ceremony</option>
-								  <option value="3">Reception party</option>
-								</select>
-								<div class="help-block with-errors"></div>
-							</div> 
-						</div>
-						<div class="col-md-12">
-							<div class="form-group"> 
-								<textarea class="form-control" id="message" placeholder="Your Message" rows="8" data-error="Write your message" required></textarea>
-								<div class="help-block with-errors"></div>
-							</div>
-							<div class="submit-button text-center">
-								<button class="btn btn-common" id="submit" type="submit">Send Message</button>
-								<div id="msgSubmit" class="h3 text-center hidden"></div> 
-								<div class="clearfix"></div> 
-							</div>
-						</div>
-					  </div>            
-					</form>
+					     <!--  map -->
+              <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-bottom: 10px">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13056.784655463156!2d126.8666791!3d35.1018123!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3571899f7ed5d02f%3A0x67b16c0e638ecae3!2z7Ja067CY67iM66Op!5e0!3m2!1sko!2skr!4v1718239779045!5m2!1sko!2skr"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <style>
+                .locationBtn {
+                  margin-right: 0.5vw;
+                  border-radius: 50%;
+                  width: 50px;
+                  aspect-ratio: 1 / 1;
+                }
+              </style>
+              <div style="display: flex; flex-direction: row; justify-content: center; align-items: center">
+                <a href="https://map.naver.com/p/search/%EC%96%B4%EB%B0%98%EB%B8%8C%EB%A3%A9/place/1284603728?c=15.00,0,0,0,dh&isCorrectAnswer=true" target="_blank">
+                  <img src="../../images/naver.png" alt="naver" class="locationBtn" /> </a
+                ><br />
+                <a href="https://m.map.kakao.com/actions/detailMapView?id=1473366312&refService=place" target="_blank"> <img src="../../images/kakao.png" alt="kakao" class="locationBtn" /> </a><br />
+                <a
+                  href="https://www.google.com/maps/dir//%EA%B4%91%EC%A3%BC%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%82%A8%EA%B5%AC+%EC%9E%84%EC%95%94%EB%8F%99+565-1/data=!4m8!4m7!1m0!1m5!1m1!1s0x3571899f7ed5d02f:0x67b16c0e638ecae3!2m2!1d126.8666791!2d35.1018123?entry=ttu"
+                  target="_blank"
+                >
+                  <img src="../../images/google.png" alt="google" class="locationBtn" />
+                </a>
+              </div>
+              <div id="imgCard-container"></div>
+              <!-- END map -->
 				  </div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<!-- End Contact -->
-	
-	<!-- Start Footer -->
-	<footer class="footer-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">The Real Wedding</a> Design By : <a href="https://html.design/">html design</a></p>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- End Footer -->
+
 
 	<!-- ALL JS FILES -->
 	<script src="js/jquery.min.js"></script>

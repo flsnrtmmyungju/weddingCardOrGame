@@ -541,32 +541,45 @@
         <div class="container">
           <div class="row animate-box">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-              <h2>Are You Attending?</h2>
-              <p>Please Fill-up the form to notify you that you're attending. Thanks.</p>
+              <h2>오시는길</h2>
             </div>
           </div>
           <div class="row animate-box">
             <div class="col-md-10 col-md-offset-1">
               <!--  map -->
-              <div id="daumRoughmapContainer1718236942674" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-              <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
-
-              <script charset="UTF-8">
-                new daum.roughmap.Lander({
-                  timestamp: '1718236942674',
-                  key: '2jnmu',
-                  mapWidth: '640',
-                  mapHeight: '360',
-                }).render();
-              </script>
+              <div style="display: flex; justify-content: center; align-items: center; width: 100%; margin-bottom: 10px">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13056.784655463156!2d126.8666791!3d35.1018123!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3571899f7ed5d02f%3A0x67b16c0e638ecae3!2z7Ja067CY67iM66Op!5e0!3m2!1sko!2skr!4v1718239779045!5m2!1sko!2skr"
+                  width="600"
+                  height="450"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+              <style>
+                .locationBtn {
+                  margin-right: 0.5vw;
+                  border-radius: 50%;
+                  width: 50px;
+                  aspect-ratio: 1 / 1;
+                }
+              </style>
+              <div style="display: flex; flex-direction: row; justify-content: center; align-items: center">
+                <a href="https://map.naver.com/p/search/%EC%96%B4%EB%B0%98%EB%B8%8C%EB%A3%A9/place/1284603728?c=15.00,0,0,0,dh&isCorrectAnswer=true" target="_blank">
+                  <img src="../../images/naver.png" alt="naver" class="locationBtn" /> </a
+                ><br />
+                <a href="https://m.map.kakao.com/actions/detailMapView?id=1473366312&refService=place" target="_blank"> <img src="../../images/kakao.png" alt="kakao" class="locationBtn" /> </a><br />
+                <a
+                  href="https://www.google.com/maps/dir//%EA%B4%91%EC%A3%BC%EA%B4%91%EC%97%AD%EC%8B%9C+%EB%82%A8%EA%B5%AC+%EC%9E%84%EC%95%94%EB%8F%99+565-1/data=!4m8!4m7!1m0!1m5!1m1!1s0x3571899f7ed5d02f:0x67b16c0e638ecae3!2m2!1d126.8666791!2d35.1018123?entry=ttu"
+                  target="_blank"
+                >
+                  <img src="../../images/google.png" alt="google" class="locationBtn" />
+                </a>
+              </div>
+              <div id="imgCard-container"></div>
               <!-- END map -->
-
-              <div id="naverMap" style="width: 70%; height: 300px; margin: auto"></div>
-              <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=c34712zscd"></script>
-              <script id="code">
-                var mapDiv = document.getElementById('naverMap');
-                var map = new naver.maps.Map(mapDiv);
-              </script>
             </div>
           </div>
         </div>
