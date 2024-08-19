@@ -10,7 +10,8 @@ const IframeWrapper = styled.div`
 export default function MainCard() {
   return (
     <IframeWrapper>
-      <iframe src='/templatePage/3.html' width='100%' height='100%' style={{ border: 'none' }}></iframe>
+      {/* ?? */}
+      <iframe src='/templatePage/3/index.html' width='100%' height='100%' style={{ border: 'none' }}></iframe>
     </IframeWrapper>
   );
 }
